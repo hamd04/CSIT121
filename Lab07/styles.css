@@ -1,0 +1,112 @@
+body {
+    background-color: #333;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+}
+
+nav {
+    margin-bottom: 20px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 10px;
+    margin: 20px 0;
+}
+
+th {
+    background-color: #444;
+    color: #fff;
+    padding: 10px;
+    font-weight: bold;
+}
+
+.tier-box, .item-box, .image-box, .description-box, .popularity-box, .rating-box {
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    color: #fff;
+    font-weight: bold;
+}
+
+.tier-s .tier-box { background-color: #ff4d4d; }
+.tier-a .tier-box { background-color: #ffb366; }
+.tier-b .tier-box { background-color: #ffff66; color: #333; }
+.tier-c .tier-box { background-color: #66ff66; color: #333; }
+.tier-d .tier-box { background-color: #66ffff; color: #333; }
+.tier-f .tier-box { background-color: #b3b3b3; color: #333; }
+
+.item-box {
+    background-color: #555;
+    color: #fff;
+}
+
+.image-box {
+    background-color: #444;
+    padding: 10px;
+}
+
+.image-box img {
+    width: 50px;
+    height: auto;
+    border-radius: 5px;
+}
+
+.description-box {
+    background-color: #666;
+    color: #fff;
+    font-weight: normal;
+    text-align: left;
+    padding: 10px 15px;
+}
+
+.popularity-box, .rating-box {
+    background-color: #777;
+    color: #fff;
+}
+
+form {
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    background-color: #444;
+    border-radius: 8px;
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+input, select, textarea, button {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    border: none;
+}
+
+button {
+    background-color: #ff4d4d;
+    color: #fff;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #ff3333;
+}
