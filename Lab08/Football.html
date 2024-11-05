@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Football - WebP Image</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="topnav" id="myTopnav">
+        <a href="Drive.html">Drive</a>
+        <a href="Fish.html">Fish</a>
+        <a href="Football.html" class="active">Football</a>
+        <a href="javascript:void(0);" class="icon" onclick="toggleMenu()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+
+    <h1>Football Image</h1>
+
+    <img src="images/Football.webp" alt="Football Helmet On Field">
+
+    <p><strong>Description of the Image:</strong> The image shows a player helmet on a football field with two teams in the background.</p>
+    
+    <p><strong>Image File Type Information:</strong> The image I found is a WebP file type, which allows for the page to load faster since the format is lighter compared to JPEG and PNG.</p>
+    
+    <p><strong>Why Did I Choose This Image?</strong> I chose this image because it represents my love for football. The helmet also appears to be a gold color, which is the same helmet color as my favorite NFL team, the San Francisco 49ers.</p>
+    
+    <p><strong>Source:</strong> <a href="https://www.pexels.com/photo/helmet-on-the-ground-2862718/" target="_blank">Link to Image</a></p>
+
+    <script>
+        function toggleMenu() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+    </script>
+
+</body>
+</html>

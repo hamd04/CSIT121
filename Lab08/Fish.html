@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fish - WebP Image</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="topnav" id="myTopnav">
+        <a href="Drive.html">Drive</a>
+        <a href="Fish.html" class="active">Fish</a>
+        <a href="Football.html">Football</a>
+        <a href="javascript:void(0);" class="icon" onclick="toggleMenu()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+
+    <h1>Fish Image</h1>
+
+    <img src="images/Fish.webp" alt="Fish With Coral Reef">
+
+    <p><strong>Description of the Image:</strong> In this image, a school of fish is shown swimming around a coral reef.</p>
+    
+    <p><strong>Image File Type Information:</strong> The format of this image is WebP, which allows faster loading times for the website while also maintaining the quality of the image.</p>
+    
+    <p><strong>Why Did I Choose This Image?</strong> I chose this image because I have always been fascinated with marine life from an early age.</p>
+    
+    <p><strong>Source:</strong> <a href="https://www.pexels.com/photo/school-of-fish-underwater-photography-3311094/" target="_blank">Link to Image</a></p>
+
+    <script>
+        function toggleMenu() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+    </script>
+
+</body>
+</html>
+
+
+
