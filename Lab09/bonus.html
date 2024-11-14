@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bonus: Toggle Employee Data</title>
+
+    <!-- CSS -->
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: rgb(45, 190, 242);
+        }
+
+        th {
+            background-color: rgb(55, 12, 211);
+            color: white;
+        }
+
+        .button {
+            position: relative;
+            text-align: center;
+            padding: 20px;
+            border: 4px solid rgb(55, 12, 211);
+            background: rgb(45, 190, 242);
+            color: rgb(255, 255, 255);
+            outline: none;
+            border-radius: 30px;
+            font-size: 30px;
+            width: 500px;
+        }
+
+        .button:hover {
+            color: black;
+            background: white;
+        }
+
+        .center-button {
+            text-align: center;
+        }
+    </style>
+
+    <!-- JavaScript -->
+    <script>
+        // Function to load XML data and display it
+        function loadXMLDoc() {
+            let xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function () {
+                // Request finished and response is ready and Status is "OK"
+                if (this.readyState == 4 && this.status == 200) {
+                    empDetails(this);
+                }
+            };
+
+            // employee.xml is the external XML file
+            xmlhttp.open("GET", "employee.xml", true);
+            xmlhttp.send();
+        }
+
+        // Function to parse the XML and display employee details in a table
+        function empDetails(xml) {
+            let i;
+            let xmlDoc = xml.responseXML;
+            let table =
+                `<tr><th>Employee ID</th><th>Firstname</th><th>Lastname</th>
+                    <th>Title</th><th>Division</th>
+                    <th>Building</th><th>Room</th>
+                </tr>`;
+            let x = xmlDoc.getElementsByTagName("employee");
+
+            // Start to fetch the data by using TagName 
+            for (i = 0; i < x.length; i++) {
+                table += "<tr><td>" +
+                    x[i].getElementsByTagName("id")[0]
+                        .childNodes[0].nodeValue + "</td><td>" +
+                    x[i].getElementsByTagName("firstname")[0]
+                        .childNodes[0].nodeValue + "</td><td>" +
+                    x[i].getElementsByTagName("lastname")[0]
+                        .childNodes[0].nodeValue + "</td><td>" +
+                    x[i].getElementsByTagName("title")[0]
+                        .childNodes[0].nodeValue + "</td><td>" +
+                    x[i].getElementsByTagName("division")[0]
+                        .childNodes[0].nodeValue + "</td><td>" +
+                    x[i].getElementsByTagName("building")[0]
+                        .childNodes[0].nodeValue + "</td><td>" +
+                    x[i].getElementsByTagName("room")[0]
+                        .childNodes[0].nodeValue + "</td></tr>";
+            }
+
+            // Print the XML data in table form
+            document.getElementById("id").innerHTML = table;
+        }
+
+        // Function to toggle the visibility of the table and update button text
+        function toggleTable() {
+            let table = document.getElementById("id");
+            let button = document.getElementById("toggleButton");
+
+            // Toggle table visibility and update button text
+            if (table.style.display === "none") {
+                table.style.display = "table";
+                button.textContent = "Close Employee Data";
+                loadXMLDoc(); // Load the data when the table is shown
+            } else {
+                table.style.display = "none";
+                button.textContent = "Get Employee Data";
+            }
+        }
+    </script>
+</head>
+<body>
+    <!-- Centered button using CSS -->
+    <div class="center-button">
+        <!-- Button to toggle the table visibility -->
+        <button id="toggleButton" type="button" class="button" onclick="toggleTable()">
+            Get Employee Data
+        </button>
+    </div>
+
+    <br><br>
+    <!-- Table to display employee details -->
+    <table id="id" style="display:none;"></table>
+</body>
+</html>
